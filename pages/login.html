@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../style/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
+    <script src="../scripts/navbar.js" defer></script>
+</head>
+
+<body class="body">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../images/gym_intro.png" alt="Company logo" style="width: 64px; height: 64px;">
+        </div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="../images/gym_intro.png" alt="Company logo" style="width: 80px; height: 80px;">
+        </div>
+
+
+        <div class="footer-elements-contact">
+            <ul>
+                <ul>
+                    <li class="contact-title">Contact</li>
+                    <li>luka.dominkovic25@gmail.com</li>
+                    <div class="icons">
+                        <li class="icons-elements">
+                            <img src="../images/fb_icon.png" style="width: 40px; height: 40px;">
+                            <img src="../images/insta_icon.png" style="width: 40px; height: 40px;">
+                            <img src="../images/linkedin_icon.png" style="width: 40px; height: 40px;">
+                        </li>
+                    </div>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="footer-elements-nav">
+            <ul>
+                <ul>
+                    <li class="platform-title">Platform</li>
+                    <div class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="details.html">Details</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </div>
+                </ul>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="content_container">
+        <div id="form_container">
+            <div id="form_header_container">
+                <h2 id="form-header">Register an account to use the application</h2>
+            </div>
+        </div>
+
+        <div id="form_content_container">
+            <div id="form_content_inner_container">
+                <input type="text" id="full_name" placeholder="Full name...">
+                <input type="email" id="email" placeholder="Email...">
+                <input type="password" id="password" placeholder="Password...">
+                <input type="text" id="height" placeholder="Height...">
+                <input type="text" id="weight" placeholder="Weight...">
+
+                <div id="button_container">
+                    <button id="register" href="../pages/index.html">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script type="module">
+    //Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCbkgkbPoDJQIORMfs6pLMQWBCV04UDoEQ",
+        authDomain: "training-app-48233.firebaseapp.com",
+        databaseURL: "https://training-app-48233-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "training-app-48233",
+        storageBucket: "training-app-48233.appspot.com",
+        messagingSenderId: "646814817286",
+        appId: "1:646814817286:web:cf5fe64b3d03327cd87787"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase();
+
+    //----- New Registration code start	  
+    document.getElementById("register").addEventListener("click", function () {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var height = document.getElementById("height").value;
+        var weight = document.getElementById("weight").value;
+        var fullName = document.getElementById("full_name").value;
+
+        //For new registration
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user);
+
+                set(ref(database, "users/" + auth.currentUser.uid), {
+                    email: email,
+                    height: height,
+                    fullName: fullName,
+                    weight: weight
+                });
+
+                alert("Registration successful!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                console.log(errorMessage);
+                alert(error);
+            });
+    });
+</script>
+
+</html>

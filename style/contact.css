@@ -1,0 +1,418 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -o-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -moz-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -ms-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+
+    padding-top: 5px;
+
+    border-bottom: 1px solid #fff;
+
+    z-index: 2;
+
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+
+    font-family: Oswald;
+
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -o-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -moz-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -ms-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+}
+
+.logo {
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover {
+    background-color: rgba(164, 180, 148, 5%);
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.register-button {
+    width: 80px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background-color: rgb(52, 37, 47);
+
+    border-radius: 10px;
+
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: black;
+}
+
+.register-button:hover {
+    background-color: rgba(52, 37, 47, 10%);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    color: white;
+
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -o-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -moz-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: -ms-linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+    background: linear-gradient(-225deg, rgba(0, 0, 0, 1) 0%, rgba(52, 37, 47, 1) 100%);
+
+    font-family: Cardo;
+    font-size: 12px;
+
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.footer-logo {
+    padding: 35px 0px 25px 25px;
+    float: left;
+}
+
+.footer-elements-nav ul {
+    margin: 0;
+    padding-top: 5px;
+    display: block;
+
+    float: right;
+}
+
+.footer-elements-nav li {
+    list-style: none;
+    font-size: 10px;
+}
+
+.footer-elements-nav a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.footer-elements-contact ul {
+    margin: 0;
+    padding-top: 5px;
+    display: block;
+
+    padding-right: 20px;
+
+    float: right;
+}
+
+.footer-elements-contact li {
+    list-style: none;
+    font-size: 10px;
+}
+
+.contact-title {
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.platform-title {
+    font-weight: bold;
+}
+
+.footer-elements-contact a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover {
+    background-color: rgba(164, 180, 148, 5%);
+}
+
+.icons {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    padding-right: 30px;
+}
+
+.icons-elements img {
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+
+.footer-links a {
+    padding-top: 15px;
+    padding-left: 0px;
+    padding-right: 100px;
+}
+
+.content {
+    position: absolute;
+
+    z-index: 0;
+
+    top: 100px;
+    left: 40px;
+
+    padding-bottom: 200px;
+}
+
+.find-us {
+    width: 1835px;
+    height: 650px;
+
+    border-radius: 45px 45px 180px 0px;
+
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -o-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -moz-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -ms-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: black;
+}
+
+.find-us-title {
+    font-family: Oswald;
+    font-size: 150px;
+    color: white;
+
+    padding-left: 40px;
+
+    border-bottom: 1px solid #fff;
+}
+
+.get-to-social {
+    word-spacing: 4px;
+
+    font-family: Cardo;
+    font-size: 40px;
+    color: white;
+
+    padding-left: 45px;
+    padding-top: 35px;
+}
+
+.social-media-boxes {
+    height: 750px;
+
+    padding-top: 100px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 1600px;
+
+    padding-left: 200px;
+}
+
+.facebook-box,
+.instagram-box,
+.linkedin-box {
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -o-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -moz-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: -ms-linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+    background: linear-gradient(-225deg, rgba(15, 15, 15, 1) 0%, rgba(59, 82, 74, 1) 100%);
+
+    min-width: 350px;
+
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: black;
+}
+
+.facebook-box {
+    position: relative;
+    border-radius: 180px 45px 45px 0px;
+}
+
+.instagram-box {
+    border-radius: 45px 45px 0px 0px;
+}
+
+.linkedin-box {
+    border-radius: 45px 180px 0px 45px;
+}
+
+.facebook-image {
+    z-index: 99;
+
+    position: absolute;
+
+    padding-top: 372.5px;
+    padding-left: 30px;
+}
+
+.instagram-image {
+    padding-left: 20px;
+}
+
+.linkedin-image {
+    padding-top: 260px;
+    padding-left: 60px;
+}
+
+.facebook-text a {
+    z-index: 100;
+
+    position: absolute;
+
+    padding-top: 150px;
+    padding-left: 40px;
+
+    font-size: 80px;
+    font-family: Oswald;
+
+    text-decoration: underline;
+
+    color: white;
+}
+
+.instagram-text a {
+    z-index: 100;
+
+    position: absolute;
+
+    padding-top: 150px;
+    padding-left: 30px;
+
+    font-size: 80px;
+    font-family: Oswald;
+
+    text-decoration: underline;
+
+    color: white;
+}
+
+.linkedin-text a {
+    z-index: 100;
+
+    position: absolute;
+
+    padding-top: 130px;
+    padding-left: 55px;
+
+    font-size: 80px;
+    font-family: Oswald;
+
+    text-decoration: underline;
+
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
